@@ -1,4 +1,20 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+.App {
+  text-align: center;
+  font-size: 1.2rem;
+  background: #e2e2e2;
+  margin: 50px 0;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.App-header {
+  margin: 30px 20px 0px;
+  background: #e2e2e2;
+}

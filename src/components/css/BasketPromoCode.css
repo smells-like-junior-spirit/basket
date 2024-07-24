@@ -1,20 +1,29 @@
 .BasketPromoCode {
     display: flex;
-    justify-content: space-around;
-    padding: 10px 0;
+    align-items: center;
+    padding: 10px 20px;
     border-radius: 3px;
     border: 1px solid rgb(235, 235, 235);
+    background: #fff;
+    border-radius: 20px;
 }
 
-.BasketPromoCode .btn {
-    border-radius: 0 3px 3px 0;
+.BasketPromoCode_form {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 20px;
 }
-
 
 .BasketPromoCode_input {
-    width: 80%;
+    width: 100%;
 }
 
 .BasketPromoCode_input:focus {
     outline: 1px solid rgb(235, 235, 235);
+}
+
+.BasketPromoCode .btn {
+    border-radius: 0 3px 3px 0;
 }

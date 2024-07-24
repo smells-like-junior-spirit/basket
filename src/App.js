@@ -14,7 +14,8 @@ function App() {
       uid: "05542e59-7a90-4e80-bf9d-78967f272049",
       title: "Товар2",
       description: "описание товара 2",
-      price: 800
+      price: 800,
+      isDeleted : true
     },
     {
       uid: "7793e4f0-fe86-47cc-98f6-e01b6beeb3af",
@@ -28,8 +29,8 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>Корзина</h1>
-        <Basket items={items} />
       </header>
+      <Basket items={items} />
     </div>
   );
 }

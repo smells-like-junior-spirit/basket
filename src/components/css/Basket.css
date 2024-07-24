@@ -1,11 +1,21 @@
-.Basket * {
-    box-sizing: border-box;
-}
-
 .Basket {
     width: 80%;
-    margin: auto;
+    margin: 30px auto;
+
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    background: #e2e2e2;
 }
+
+
+.Basket__items {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background: #e2e2e2;
+}
+
 
 .BasketItem,
 .BasketPromoInfo,

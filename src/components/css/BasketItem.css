@@ -1,8 +1,24 @@
 .BasketItem {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     border: 1px solid rgb(235, 235, 235);
+    border-radius: 20px;
+    background: #fff;
+}
+
+.BasketItem--deleted {
+    background: green;
 }
 
 .BasketItem:hover {
     background: rgba(245, 245, 245, 0.5);
+}
+
+.BasketItem--deleted:hover {
+    background: green;
+}
+
+.spaceDeleteButton {
+    width: 10%;
 }

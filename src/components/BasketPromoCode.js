@@ -10,12 +10,12 @@ const BasketPromoCode = () => {
     }
     return (
         <div className="BasketPromoCode">
-            <form onSubmit={handleSubmit}>
+            <form className="BasketPromoCode_form" onSubmit={handleSubmit}>
                 <input
                     className="BasketPromoCode_input"
                     placeholder="Промокод"
                 ></input>
-                <Button value='Применить' onClickHandler={() => alert('Применить')} ></Button>
+                <Button value='Применить' onClickHandler={() => alert('Применить')} className="BasketPromoCode_btn" ></Button>
             </form>
         </div>
     )

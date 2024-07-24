@@ -1,12 +1,15 @@
 .BasketPromoInfo {
     display: flex;
-    background: rgb(248, 251, 245);
+    justify-content: flex-start;
+    align-items: center;
     color: rgb(0, 86, 0);
     border: 1px solid rgb(235, 235, 235);
+    border-radius: 20px;
+    background: #fff;
 }
 
 .BasketPromoInfo_main {
-    width: 92%;
+    width: 80%;
 }
 
 .BasketPromoInfo_title {
@@ -16,4 +19,12 @@
 .BasketPromoInfo_description {
     font-size: 0.8em;
     text-transform: uppercase;
+}
+
+.BasketPromoInfo_price {
+    width: 10%;
+}
+
+.BasketPromoInfo_price .ItemPrice{
+    width: 100%;
 }

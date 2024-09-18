@@ -1,10 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import './css/BasketItem.css'
 
 import ItemInfo from './ItemInfo'
 import ItemPrice from './ItemPrice'
 import Counter from './Counter'
-import ItemDelete from './ItemDelete'
 import Button from "./Button";
 
 const BasketItem = ({
@@ -15,8 +14,10 @@ const BasketItem = ({
     qty,
     isDeleted = false
 }) => {
+    const [changeIsDeleted, setChangeIsDeleted] = useState(isDeleted);
     const itemClassName = isDeleted ? 'BasketItem BasketItem--deleted' : 'BasketItem'
-    const deleteButton = isDeleted ? <Button value="Восстановить"></Button> : <ItemDelete></ItemDelete>
+    const deleteButton = isDeleted ? <Button value="Восстановить" onClickHandler={() => { setChangeIsDeleted(!changeIsDeleted) }}></Button>
+        : <Button value="Удалить"></Button>
     return (
         <div className={itemClassName}>
             <ItemInfo title={title} description={description}></ItemInfo>

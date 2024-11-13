@@ -3,26 +3,55 @@ import "./css/Counter.css"
 
 import Button from "./Button";
 
-const Counter = ({ value, uid }) => {
+const Counter = ({ value, uid, itemsState, setItemsState }) => {
 
-    const [qty, setQty] = useState(value);
+    // const [qty, setQty] = useState(value);
+
+    // const qtyButtonAdd = () => {
+    //     setQty(qty + 1);
+    // }
+
+    // const qtyButtonSub = () => {
+    //     setQty(qty - 1 > 0 ? qty - 1 : 0);
+    // }
+
+    // const qtyInputChange = (ev) => {
+    //     let qty = parseInt(ev.target.value);
+
+    //     if (qty < 0 || isNaN(qty)) {
+    //         qty = 0;
+    //     }
+
+    //     setQty(qty);
+    // }
+
+    const qty = value;
 
     const qtyButtonAdd = () => {
-        setQty(qty + 1);
+        let newItemsState = Array.from(itemsState);
+        let index = newItemsState.findIndex(item => item.uid === uid);
+        newItemsState[index].qty++;
+        setItemsState(newItemsState);
     }
 
     const qtyButtonSub = () => {
-        setQty(qty - 1 > 0 ? qty - 1 : 0);
+        let newItemsState = Array.from(itemsState);
+        let index = newItemsState.findIndex(item => item.uid === uid);
+        newItemsState[index].qty--;
+        if (newItemsState[index].qty < 0 || isNaN(newItemsState[index].qty)) {
+            newItemsState[index].qty = 0;
+        }
+        setItemsState(newItemsState);
     }
 
     const qtyInputChange = (ev) => {
-        let qty = parseInt(ev.target.value);
-
-        if (qty < 0 || isNaN(qty)) {
-            qty = 0;
+        let newItemsState = Array.from(itemsState);
+        let index = newItemsState.findIndex(item => item.uid === uid);
+        newItemsState[index].qty = parseInt(ev.target.value);
+        if (newItemsState[index].qty < 0 || isNaN(newItemsState[index].qty)) {
+            newItemsState[index].qty = 0;
         }
-
-        setQty(qty);
+        setItemsState(newItemsState);
     }
 
     return (

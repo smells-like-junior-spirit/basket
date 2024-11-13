@@ -7,16 +7,19 @@
     background: #fff;
 }
 
-.BasketItem--deleted {
-    background: green;
+.BasketItem:hover {
+    background: rgb(79, 170, 87);
 }
 
-.BasketItem:hover {
-    background: rgba(245, 245, 245, 0.5);
+.BasketItem--deleted {
+    background: rgba(245, 245, 245, 0.1);
+    /* opacity: 0.4; */
+    color: rgb(145, 145, 145);
 }
 
 .BasketItem--deleted:hover {
-    background: green;
+    background: rgba(100, 100, 100, 0.5);
+    color: rgb(200, 200, 200);
 }
 
 .spaceDeleteButton {

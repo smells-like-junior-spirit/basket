@@ -5,6 +5,7 @@ import ItemInfo from './ItemInfo'
 import ItemPrice from './ItemPrice'
 import Counter from './Counter'
 import Button from "./Button";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 const BasketItem = ({
     uid,
@@ -12,17 +13,19 @@ const BasketItem = ({
     description,
     price,
     qty,
-    isDeleted = false
+    isVisible,
+    itemsState,
+    setItemsState,
+    changeVisibleBasketItem,
 }) => {
-    const [changeIsDeleted, setChangeIsDeleted] = useState(isDeleted);
-    const itemClassName = isDeleted ? 'BasketItem BasketItem--deleted' : 'BasketItem'
-    const deleteButton = isDeleted ? <Button value="Восстановить" onClickHandler={() => { setChangeIsDeleted(!changeIsDeleted) }}></Button>
-        : <Button value="Удалить"></Button>
+    const itemClassName = isVisible ? 'BasketItem' : 'BasketItem BasketItem--deleted'
+    const deleteButton = isVisible ? <Button value="Удалить" onClickHandler={() => { changeVisibleBasketItem({ uid }) }}></Button>
+        : <Button value="Восстановить" onClickHandler={() => { changeVisibleBasketItem({ uid }) }} uid={uid}></Button>
     return (
         <div className={itemClassName}>
             <ItemInfo title={title} description={description}></ItemInfo>
             <ItemPrice value={price} currency={'Руб.'}></ItemPrice>
-            <Counter value={qty} uid={uid}></Counter>
+            <Counter value={qty} uid={uid} itemsState={itemsState} setItemsState={setItemsState}></Counter>
             <ItemPrice value={qty * price} currency={'Руб.'}></ItemPrice>
             <div className="spaceDeleteButton">{deleteButton}</div>
         </div>
